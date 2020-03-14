@@ -16,11 +16,13 @@ body {
     color: green;
     min-height: 100vh;
 }
-.full-height-grow{
+
+.full-height-grow {
     display: flex;
     flex-direction: column;
-    
+
 }
+
 .brand-logo {
     display: flex;
     align-items: center;
@@ -50,33 +52,74 @@ body {
 .main-nav a:hover {
     color: blue;
 }
-.main-header{
+
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
 }
-.container{
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding:  0 40px;
+    padding: 0 40px;
 }
+
 .title {
     font-weight: 500;
     font-size: 3rem;
     margin-bottom: 1rem;
-    margin-top:0;
+    margin-top: 0;
 }
+
 .subtitle {
-    font-weight:500;
-    font-size:1.2rem;
+    font-weight: 500;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
 }
-.btn{
-    color: #fff;
+
+.btn {
+    background-color: #f1f1f1;
+    color: rgb(149, 151, 130);
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+       padding: .75rem 1.5rem;
+       border-radius: .5rem;
+       text-decoration: none;
+       font-size: .9rem;
+}
+
+.btn.btn-background-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
     background-color: green;
+    transition: transform 300ms ease-in-out;
     padding:  .75rem 1.5rem;
-    border-radius:  .5rem;
+    border-radius:  50%;
     text-decoration: none;
     font-size: .9rem;
+    transform: scaleX(0);
+    transform-origin:left ;
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before{
+    transform: scaleX(1);
+}
+.btn.btn-background-slide{
+    z-index: 1;
+}
+.btn.btn-background-slide:hover,
+.btn.btn-background-slide:focus {
+    color: #f1f1f1;
 }
